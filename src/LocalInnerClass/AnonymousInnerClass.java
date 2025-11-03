@@ -33,8 +33,14 @@ class Outer04 { //外部类
         System.out.println("tiger的运行类型=" + tiger.getClass());
         //匿名内部类的方法可以多次调用
         tiger.cry();
-        tiger.cry();
-        tiger.cry();
+
+        new IA(){
+            @Override
+            public void cry() {
+                System.out.println("老虎叫唤");
+            }
+        }.cry();
+        //可以直接在匿名内部类后.方法,因为匿名内部类的本质就是一个对象
 
         //基于类的匿名内部类
         //编译类型是Father,运行类型是 Outer04$2
